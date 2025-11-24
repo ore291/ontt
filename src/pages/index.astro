@@ -1,16 +1,700 @@
 ---
-
+import "../styles/global.css";
+import {
+  Dumbbell,
+  Apple,
+  Users,
+  Video,
+  TrendingUp,
+  Target,
+  Zap,
+  Heart,
+  Award,
+  ArrowRight,
+  CheckCircle2,
+} from "@lucide/astro";
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>ONT - Overnight Transformations</title>
+  </head>
+  <body class="min-h-screen bg-background">
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-background via-charcoal to-background"
+        >
+        </div>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_center,_hsl(var(--gold)/0.1)_0%,_transparent_65%)]"
+        >
+        </div>
+
+        <div
+          class="container-custom relative z-10 text-center space-y-8 animate-fade-in"
+        >
+          <div class="space-y-4">
+            <h1
+              class="font-display text-5xl md:text-7xl lg:text-8xl font-black tracking-tight"
+            >
+              Transform Your Life.
+              <br />
+              <span class="gradient-text">Build Your Discipline.</span>
+              <br />
+              Join ONT.
+            </h1>
+            <p
+              class="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
+            >
+              The luxury social fitness platform built for real transformation  
+              workouts, nutrition, community, and motivation combined into one
+              powerful ecosystem.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <button
+              class="bg-primary text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
+            >
+              Join Early Access
+              <ArrowRight  class="ml-2 h-5 w-5 inline" />
+            </button>
+            <button
+              class="border border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
+            >
+              Become a Creator
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- What is ONT -->
+      <section class="section-padding bg-charcoal/30">
+        <div class="container-custom">
+          <div class="max-w-4xl mx-auto text-center space-y-6">
+            <h2
+              class="font-display text-4xl md:text-5xl lg:text-6xl font-bold gold-underline pb-4"
+            >
+              What is <span class="gradient-text">ONT?</span>
+            </h2>
+            <p class="text-lg md:text-xl text-foreground/90 leading-relaxed">
+              ONT (Overnight Transformations) is a premium social fitness app
+              built to help you take control of your body, your habits, and your
+              lifestyle.
+            </p>
+            <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              We combine personalised training, smart nutrition, and a
+              motivational social platform so you can stay inspired, stay
+              consistent, and stay accountable   every single day.
+            </p>
+            <p class="text-xl md:text-2xl font-semibold gradient-text pt-4">
+              ONT is where transformation becomes a lifestyle.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="section-padding">
+        <div class="container-custom">
+          <h2
+            class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
+          >
+            The <span class="gradient-text">ONT System</span>
+          </h2>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+              [
+                {
+                  icon: Dumbbell,
+                  title: "Personalised Workout Plans",
+                  description:
+                    "Custom routines built around your level, your goals, and your schedule.",
+                },
+                {
+                  icon: Apple,
+                  title: "Smart Nutrition Plans",
+                  description:
+                    "Daily meal guidance and personalised targets for real results.",
+                },
+                {
+                  icon: Users,
+                  title: "Social Fitness Profiles",
+                  description:
+                    "Post your journey. Build a following. Share your training, meals, and progress.",
+                },
+                {
+                  icon: Video,
+                  title: "Public Reels Feed",
+                  description:
+                    "Workouts, meals, motivation, lifestyle, transformations   all in one feed.",
+                },
+                {
+                  icon: Heart,
+                  title: "Community Engagement",
+                  description:
+                    "Follow, like, comment, share   motivate and be motivated.",
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Progress & Consistency Tracking",
+                  description:
+                    "Track weight, habits, workouts, meals, and streaks.",
+                },
+                {
+                  icon: Target,
+                  title: "Discipline-Powered Design",
+                  description:
+                    "ONT is built for people who want to get better every day 💪🏾",
+                },
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  class="card-glass p-6 rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 group"
+                >
+                  <feature.icon  class="h-12 w-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 class="font-display text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p class="text-muted-foreground">{feature.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Why ONT -->
+      <section class="section-padding bg-charcoal/30">
+        <div class="container-custom">
+          <div class="max-w-4xl mx-auto space-y-8">
+            <h2
+              class="font-display text-4xl md:text-5xl font-bold text-center gold-underline pb-4"
+            >
+              Why <span class="gradient-text">ONT?</span>
+            </h2>
+
+            <div class="text-center space-y-6">
+              <p class="text-xl text-foreground/90">
+                Most fitness apps give you workouts.
+                <br />
+                Most social apps give you entertainment.
+              </p>
+              <p class="text-2xl font-bold gradient-text">
+                ONT gives you both   with purpose.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-12">
+              {
+                [
+                  "Structure",
+                  "Personalisation",
+                  "Motivation",
+                  "Community",
+                  "Accountability",
+                ].map((item) => (
+                  <div class="flex items-center gap-3 text-lg">
+                    <CheckCircle2  class="h-6 w-6 text-primary flex-shrink-0" />
+                    <span class="font-semibold">{item}</span>
+                  </div>
+                ))
+              }
+            </div>
+
+            <div class="text-center space-y-4 pt-8">
+              <p class="text-xl font-semibold">
+                This is the future of transformation.
+              </p>
+              <div class="space-y-2 text-lg text-muted-foreground">
+                <p>Your plan.</p>
+                <p>Your progress.</p>
+                <p>Your people.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us -->
+      <section class="section-padding">
+        <div class="container-custom">
+          <div class="max-w-4xl mx-auto text-center space-y-6">
+            <h2
+              class="font-display text-4xl md:text-5xl font-bold gold-underline pb-4"
+            >
+              The ONT <span class="gradient-text">Mission</span>
+            </h2>
+            <div
+              class="space-y-6 text-lg md:text-xl text-foreground/90 leading-relaxed"
+            >
+              <p>
+                Overnight Transformations was created with one goal: to build
+                the most powerful fitness-focused social platform in the world.
+              </p>
+              <p>
+                A place where progress is shared.
+                <br />
+                Where discipline is normal.
+                <br />
+                Where people transform together.
+              </p>
+              <p class="text-muted-foreground">
+                We believe that with the right structure and community, your
+                life can change faster than you think. ONT gives you the
+                personalised tools to build your best body and the social
+                inspiration to stay locked-in.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Questionnaire -->
+      <section id="questionnaire" class="section-padding bg-charcoal/30">
+        <div class="container-custom">
+          <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12 space-y-4">
+              <h2
+                class="font-display text-4xl md:text-5xl font-bold gold-underline pb-4"
+              >
+                Help Shape <span class="gradient-text">ONT</span>
+              </h2>
+              <p class="text-xl text-muted-foreground">
+                Answer a few quick questions to help us build the strongest
+                version of ONT.
+              </p>
+            </div>
+
+            <div class="card-glass p-8 rounded-lg border">
+              <form id="questionnaire-form" class="space-y-8">
+                <div class="space-y-4">
+                  <label class="text-lg font-semibold block">
+                    1. What do you struggle with the most right now?
+                  </label>
+                  <select
+                    name="struggle"
+                    class="w-full p-3 bg-background border border-border rounded-md text-foreground"
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    <option value="consistency">Staying consistent</option>
+                    <option value="workouts">Knowing what workouts to do</option
+                    >
+                    <option value="nutrition">Understanding nutrition</option>
+                    <option value="tracking">Tracking progress</option>
+                    <option value="motivation">Motivation</option>
+                    <option value="all">All of the above</option>
+                  </select>
+                </div>
+
+                <div class="space-y-4">
+                  <label class="text-lg font-semibold block">
+                    2. Which feature excites you the most?
+                  </label>
+                  <select
+                    name="excited"
+                    class="w-full p-3 bg-background border border-border rounded-md text-foreground"
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    <option value="workouts">Personalised workouts</option>
+                    <option value="nutrition">Personalised nutrition</option>
+                    <option value="profiles">Social profiles</option>
+                    <option value="reels">Public fitness reels</option>
+                    <option value="ai">AI coaching</option>
+                    <option value="progress">Progress tracking</option>
+                  </select>
+                </div>
+
+                <div class="space-y-4">
+                  <label class="text-lg font-semibold block">
+                    3. How likely are you to use a fitness-social app like ONT?
+                  </label>
+                  <select
+                    name="likely"
+                    class="w-full p-3 bg-background border border-border rounded-md text-foreground"
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    <option value="very">Very likely</option>
+                    <option value="likely">Likely</option>
+                    <option value="unsure">Not sure yet</option>
+                    <option value="not">Probably not</option>
+                  </select>
+                </div>
+
+                <div class="space-y-4">
+                  <label class="text-lg font-semibold block">
+                    4. What type of content would you want to see on the reels
+                    feed?
+                  </label>
+                  <select
+                    name="content"
+                    class="w-full p-3 bg-background border border-border rounded-md text-foreground"
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    <option value="workouts">Workouts</option>
+                    <option value="motivation">Motivational clips</option>
+                    <option value="meals">Meal ideas</option>
+                    <option value="transformations">Transformations</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="routines">Daily routines</option>
+                  </select>
+                </div>
+
+                <div class="space-y-4">
+                  <label class="text-lg font-semibold block">
+                    5. Would you post your own journey on ONT?
+                  </label>
+                  <select
+                    name="post"
+                    class="w-full p-3 bg-background border border-border rounded-md text-foreground"
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="maybe">Maybe</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+
+                <div class="space-y-4">
+                  <label class="text-lg font-semibold block">
+                    6. What would make ONT a MUST-USE app for you?
+                  </label>
+                  <textarea
+                    name="mustUse"
+                    placeholder="Tell us your thoughts..."
+                    class="w-full min-h-[120px] p-3 bg-background border border-border rounded-md text-foreground"
+                    required></textarea>
+                </div>
+
+                <div class="space-y-4">
+                  <label class="text-lg font-semibold block">
+                    7. Would you like early access when ONT launches?
+                  </label>
+                  <select
+                    name="earlyAccess"
+                    class="w-full p-3 bg-background border border-border rounded-md text-foreground"
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="waitlist">Add me to the waitlist</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg transition-all"
+                >
+                  Submit Feedback
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early Access Waitlist -->
+      <section class="section-padding">
+        <div class="container-custom">
+          <div class="max-w-2xl mx-auto text-center space-y-8">
+            <div class="space-y-4">
+              <h2 class="font-display text-4xl md:text-5xl font-bold">
+                Join <span class="gradient-text">Early Access</span>
+              </h2>
+              <p class="text-lg text-muted-foreground">
+                Get notified the moment ONT goes live. Join thousands of early
+                members who want first access.
+              </p>
+            </div>
+
+            <form
+              id="waitlist-form"
+              class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                class="flex-1 px-4 py-3 bg-background border border-border rounded-md text-foreground"
+              />
+              <button
+                type="submit"
+                class="bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-3 rounded-md text-lg transition-all"
+              >
+                Join Waitlist
+              </button>
+            </form>
+
+            <p class="text-sm text-muted-foreground">
+              No spam. Just updates, perks, and early access.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Creator Recruitment -->
+      <section class="section-padding bg-charcoal/30">
+        <div class="container-custom">
+          <div class="max-w-4xl mx-auto text-center space-y-8">
+            <Award  class="h-16 w-16 text-primary mx-auto" />
+            <h2 class="font-display text-4xl md:text-5xl font-bold">
+              Calling All <span class="gradient-text">Creators</span>
+            </h2>
+            <p class="text-xl text-foreground/90">
+              Trainers, Coaches & Fitness Creators
+            </p>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+              ONT is building a premium fitness community   and we want creators
+              who inspire, educate, and motivate.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-12 text-left">
+              {
+                [
+                  "Post workouts, reels, nutrition tips",
+                  "Build a following",
+                  "Grow a loyal fitness community",
+                  "Increase visibility",
+                  "Influence the future of the platform",
+                ].map((benefit) => (
+                  <div class="flex items-center gap-3">
+                    <CheckCircle2  class="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>{benefit}</span>
+                  </div>
+                ))
+              }
+            </div>
+
+            <button
+              class="bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg mt-8 transition-all"
+            >
+              Apply for Creator Access
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap -->
+      <section class="section-padding">
+        <div class="container-custom">
+          <div class="max-w-4xl mx-auto">
+            <h2
+              class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
+            >
+              The Future of <span class="gradient-text">ONT</span>
+            </h2>
+
+            <div class="space-y-8">
+              {
+                [
+                  {
+                    phase: "Phase 1",
+                    title: "ONT Foundations",
+                    description:
+                      "Brand, website, early community, research, creator recruitment.",
+                  },
+                  {
+                    phase: "Phase 2",
+                    title: "App Development",
+                    description:
+                      "Workout engine, nutrition, profiles, content feed.",
+                  },
+                  {
+                    phase: "Phase 3",
+                    title: "ONT Social",
+                    description: "Follows, likes, comments, reels public feed.",
+                  },
+                  {
+                    phase: "Phase 4",
+                    title: "Release",
+                    description:
+                      "iOS & Android launch with early access users.",
+                  },
+                  {
+                    phase: "Phase 5",
+                    title: "Expansion",
+                    description:
+                      "Challenges, AI coaching, marketplace, premium tiers.",
+                  },
+                ].map((item) => (
+                  <div class="card-glass p-6 rounded-lg border border-l-4 border-l-primary hover:bg-card/70 transition-all">
+                    <div class="flex items-start gap-4">
+                      <Zap  class="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h3 class="font-display text-xl font-bold mb-2">
+                          {item.phase}   {item.title}
+                        </h3>
+                        <p class="text-muted-foreground">{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section-padding bg-charcoal/30">
+        <div class="container-custom">
+          <div class="max-w-3xl mx-auto">
+            <h2
+              class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
+            >
+              <span class="gradient-text">FAQ</span>
+            </h2>
+
+            <div class="space-y-6">
+              {
+                [
+                  {
+                    q: "When is the ONT app launching?",
+                    a: "We are currently in development with early access planned soon.",
+                  },
+                  {
+                    q: "Will ONT be free?",
+                    a: "Yes   with optional premium features later.",
+                  },
+                  {
+                    q: "Will it work on iPhone and Android?",
+                    a: "Yes, ONT will launch on both platforms.",
+                  },
+                  {
+                    q: "Can creators upload content?",
+                    a: "Yes   workouts, reels, transformations, meals, motivational content.",
+                  },
+                  {
+                    q: "How personalised are the plans?",
+                    a: "Based on your goals, training level, schedule, and preferences.",
+                  },
+                ].map((item) => (
+                  <div class="card-glass p-6 rounded-lg border">
+                    <h3 class="font-bold text-lg mb-2 text-primary">
+                      {item.q}
+                    </h3>
+                    <p class="text-muted-foreground">{item.a}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section-padding">
+        <div class="container-custom">
+          <div class="max-w-2xl mx-auto text-center space-y-8">
+            <div class="space-y-4">
+              <h2 class="font-display text-4xl md:text-5xl font-bold">
+                Get in <span class="gradient-text">Touch</span>
+              </h2>
+              <p class="text-lg text-muted-foreground">
+                Have questions? Want to collaborate? Need support?
+              </p>
+              <p class="text-primary font-semibold">
+                📩 support@overnighttransformations.com
+              </p>
+            </div>
+
+            <div class="card-glass p-8 rounded-lg border">
+              <form id="contact-form" class="space-y-6">
+                <input
+                  name="name"
+                  placeholder="Name"
+                  required
+                  class="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  class="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  class="w-full min-h-[150px] p-3 bg-background border border-border rounded-md text-foreground"
+                  required></textarea>
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg transition-all"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-charcoal/50 border-t border-border py-12">
+        <div class="container-custom">
+          <div class="text-center space-y-6">
+            <h3 class="font-display text-3xl font-bold gradient-text">ONT</h3>
+            <nav class="flex flex-wrap justify-center gap-6 text-sm">
+              <a href="#" class="hover-gold">Home</a>
+              <a href="#" class="hover-gold">Features</a>
+              <a href="#" class="hover-gold">About</a>
+              <a href="#questionnaire" class="hover-gold">Questionnaire</a>
+              <a href="#contact" class="hover-gold">Contact</a>
+            </nav>
+            <p class="text-sm text-muted-foreground">
+              Copyright © 2025 Overnight Transformations. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // Waitlist form handler
+      const waitlistForm = document.getElementById("waitlist-form");
+      waitlistForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Welcome to ONT! You're on the early access list.");
+        waitlistForm.reset();
+      });
+
+      // Questionnaire form handler
+      const questionnaireForm = document.getElementById("questionnaire-form");
+      questionnaireForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert(
+          "Thank you for your feedback! This helps us build the best fitness app."
+        );
+        questionnaireForm.reset();
+      });
+
+      // Contact form handler
+      const contactForm = document.getElementById("contact-form");
+      contactForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Message sent! We'll get back to you soon.");
+        contactForm.reset();
+      });
+    </script>
+  </body>
 </html>
