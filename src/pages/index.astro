@@ -35,7 +35,8 @@ import "../styles/global.css";
         >
         <ul class="hidden md:flex space-x-8 text-sm">
           <li>
-            <a href="#waitlist" class="hover-gold transition-colors">Join Waitlist</a
+            <a href="#waitlist" class="hover-gold transition-colors"
+              >Join Waitlist</a
             >
           </li>
           <li>
@@ -102,26 +103,23 @@ import "../styles/global.css";
           <div
             class="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-           <a
-              href="#waitlist"
-            >
-            <button
-           
-              class="bg-primary hover:bg-gray-900 cursor-pointer border text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
-            >
-              Join Early Access
-              <ArrowRight class="ml-2 h-5 w-5 inline" />
-            </button>
-          </a>
+            <a href="#waitlist">
+              <button
+                class="bg-primary hover:bg-gray-900 cursor-pointer border text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
+              >
+                Join Early Access
+                <ArrowRight class="ml-2 h-5 w-5 inline" />
+              </button>
+            </a>
             <a
               href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
             >
-            <button
-              class="border hover:bg-gray-900 cursor-pointer border-primary text-primary font-bold hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
-            >
-              Become a Creator
-              <ArrowRight class="ml-2 h-5 w-5 inline" />
-            </button>
+              <button
+                class="border hover:bg-gray-900 cursor-pointer border-primary text-primary font-bold hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
+              >
+                Become a Creator
+                <ArrowRight class="ml-2 h-5 w-5 inline" />
+              </button>
             </a>
           </div>
         </div>
@@ -482,6 +480,8 @@ import "../styles/global.css";
                 class="flex-1 px-4 py-3 bg-background border border-border rounded-md text-foreground"
               />
               <button
+                name="waitlist-submit"
+                id="waitlist-submit"
                 type="submit"
                 class="bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-3 rounded-md text-lg transition-all"
               >
@@ -724,53 +724,146 @@ import "../styles/global.css";
       const waitlistForm = document.getElementById(
         "waitlist-form"
       ) as HTMLFormElement;
-      waitlistForm?.addEventListener("submit", (e) => {
+
+      waitlistForm?.addEventListener("submit", async (e) => {
         e.preventDefault();
-        alert("Welcome to ONT! You're on the early access list.");
-        waitlistForm.reset();
-        const emailInput = waitlistForm.querySelector(
-          'input[name="email"]'
-        ) as HTMLInputElement;
-        emailInput.value = ""; // Explicit clear
-        emailInput.dispatchEvent(new Event("input", { bubbles: true }));
+
+        const data = new FormData(waitlistForm);
+        data.append("form_id", "1");
+        data.append("waitlist-submit", "waitlist-submit");
+
+        try {
+          const r = await fetch(
+            "https://overnighttransformations.com/forms/ft_ajax.php",
+            {
+              method: "POST",
+              body: data,
+            }
+          );
+
+          const json = await r.json();
+
+          if (json.success) {
+            alert("Welcome to ONT! You're on the early access list.");
+
+            waitlistForm.reset();
+
+            // Cleanly clear the email field
+            const emailInput = waitlistForm.querySelector(
+              'input[name="email"]'
+            ) as HTMLInputElement;
+
+            if (emailInput) {
+              emailInput.value = "";
+              emailInput.dispatchEvent(new Event("input", { bubbles: true }));
+            }
+          } else {
+            // Show real PHP/Auth/FormTools error
+            alert(
+              json.error ||
+                "There was an error submitting the form. Please try again."
+            );
+          }
+        } catch (err) {
+          alert("Network or server error. Please try again.");
+          console.error(err);
+        }
       });
 
       // Questionnaire form handler
       const questionnaireForm = document.getElementById(
         "questionnaire-form"
       ) as HTMLFormElement;
-      questionnaireForm?.addEventListener("submit", (e) => {
+      questionnaireForm?.addEventListener("submit", async (e) => {
         e.preventDefault();
-        alert(
-          "Thank you for your feedback! This helps us build the best fitness app."
-        );
-        questionnaireForm.reset();
-        // Explicitly reset selects and textarea for visual consistency
-        questionnaireForm.querySelectorAll("select").forEach((select) => {
-          (select as HTMLSelectElement).value = "";
-          select.dispatchEvent(new Event("change", { bubbles: true }));
-        });
-        const textarea = questionnaireForm.querySelector(
-          'textarea[name="mustUse"]'
-        ) as HTMLTextAreaElement;
-        textarea.value = "";
-        textarea.dispatchEvent(new Event("input", { bubbles: true }));
+
+        const data = new FormData(questionnaireForm);
+        data.append("form_id", "3");
+        data.append("waitlist-submit", "waitlist-submit");
+
+        try {
+          const r = await fetch(
+            "https://overnighttransformations.com/forms/ft_ajax.php",
+            {
+              method: "POST",
+              body: data,
+            }
+          );
+
+          const json = await r.json();
+
+          if (json.success) {
+            alert(
+              "Thank you for your feedback! This helps us build the best fitness app."
+            );
+            questionnaireForm.reset();
+            // Explicitly reset selects and textarea for visual consistency
+            questionnaireForm.querySelectorAll("select").forEach((select) => {
+              (select as HTMLSelectElement).value = "";
+              select.dispatchEvent(new Event("change", { bubbles: true }));
+            });
+            const textarea = questionnaireForm.querySelector(
+              'textarea[name="mustUse"]'
+            ) as HTMLTextAreaElement;
+            textarea.value = "";
+            textarea.dispatchEvent(new Event("input", { bubbles: true }));
+          } else {
+            // Show real PHP/Auth/FormTools error
+            alert(
+              json.error ||
+                "There was an error submitting the form. Please try again."
+            );
+          }
+        } catch (err) {
+          alert("Network or server error. Please try again.");
+          console.error(err);
+        }
       });
 
       // Contact form handler
       const contactForm = document.getElementById(
         "contact-form"
       ) as HTMLFormElement;
-      contactForm?.addEventListener("submit", (e) => {
+      contactForm?.addEventListener("submit", async (e) => {
         e.preventDefault();
-        alert("Message sent! We'll get back to you soon.");
-        contactForm.reset();
-        // Explicitly reset inputs and textarea
-        contactForm.querySelectorAll("input, textarea").forEach((input) => {
-          const elem = input as HTMLInputElement | HTMLTextAreaElement;
-          elem.value = "";
-          elem.dispatchEvent(new Event("input", { bubbles: true }));
-        });
+
+        const data = new FormData(contactForm);
+
+        console.log(data);
+        data.append("form_id", "2");
+        data.append("waitlist-submit", "waitlist-submit");
+
+        try {
+          const r = await fetch(
+            "https://overnighttransformations.com/forms/ft_ajax.php",
+            {
+              method: "POST",
+              body: data,
+            }
+          );
+
+          const json = await r.json();
+
+          if (json.success) {
+            alert("Message sent! We'll get back to you soon.");
+            contactForm.reset();
+            // Explicitly reset inputs and textarea
+            contactForm.querySelectorAll("input, textarea").forEach((input) => {
+              const elem = input as HTMLInputElement | HTMLTextAreaElement;
+              elem.value = "";
+              elem.dispatchEvent(new Event("input", { bubbles: true }));
+            });
+          } else {
+            // Show real PHP/Auth/FormTools error
+            alert(
+              json.error ||
+                "There was an error submitting the form. Please try again."
+            );
+          }
+        } catch (err) {
+          alert("Network or server error. Please try again.");
+          console.error(err);
+        }
       });
     </script>
   </body>
