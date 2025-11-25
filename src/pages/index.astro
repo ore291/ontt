@@ -12,6 +12,7 @@ import {
   Award,
   ArrowRight,
   CheckCircle2,
+  CircleCheckIcon,
 } from "@lucide/astro";
 import "../styles/global.css";
 ---
@@ -25,6 +26,43 @@ import "../styles/global.css";
     <title>ONT - Overnight Transformations</title>
   </head>
   <body class="min-h-screen bg-background">
+    <header
+      class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all"
+    >
+      <nav class="container-custom flex justify-between items-center py-6">
+        <a href="/" class="font-display text-2xl font-bold gradient-text"
+          >OVERNIGHT TRANSFORMATIONS</a
+        >
+        <ul class="hidden md:flex space-x-8 text-sm">
+          <li>
+            <a href="#waitlist" class="hover-gold transition-colors">Join Waitlist</a
+            >
+          </li>
+          <li>
+            <a href="#features" class="hover-gold transition-colors">Features</a
+            >
+          </li>
+          <li>
+            <a href="#why" class="hover-gold transition-colors">Why ONT</a>
+          </li>
+          <li>
+            <a href="#about" class="hover-gold transition-colors">About</a>
+          </li>
+          <li>
+            <a href="#questionnaire" class="hover-gold transition-colors"
+              >Questionnaire</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover-gold transition-colors">Contact</a>
+          </li>
+        </ul>
+        <button
+          class="md:hidden bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm"
+          >Menu</button
+        >
+      </nav>
+    </header>
     <main>
       <!-- Hero Section -->
       <section
@@ -55,7 +93,7 @@ import "../styles/global.css";
             <p
               class="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
             >
-              The luxury social fitness platform built for real transformation  
+              The luxury social fitness platform built for real transformation
               workouts, nutrition, community, and motivation combined into one
               powerful ecosystem.
             </p>
@@ -64,17 +102,27 @@ import "../styles/global.css";
           <div
             class="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
+           <a
+              href="#waitlist"
+            >
             <button
-              class="bg-primary text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
+           
+              class="bg-primary hover:bg-gray-900 cursor-pointer border text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
             >
               Join Early Access
-              <ArrowRight  class="ml-2 h-5 w-5 inline" />
+              <ArrowRight class="ml-2 h-5 w-5 inline" />
             </button>
+          </a>
+            <a
+              href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
+            >
             <button
-              class="border border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
+              class="border hover:bg-gray-900 cursor-pointer border-primary text-primary font-bold hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
             >
               Become a Creator
+              <ArrowRight class="ml-2 h-5 w-5 inline" />
             </button>
+            </a>
           </div>
         </div>
       </section>
@@ -96,7 +144,7 @@ import "../styles/global.css";
             <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">
               We combine personalised training, smart nutrition, and a
               motivational social platform so you can stay inspired, stay
-              consistent, and stay accountable   every single day.
+              consistent, and stay accountable every single day.
             </p>
             <p class="text-xl md:text-2xl font-semibold gradient-text pt-4">
               ONT is where transformation becomes a lifestyle.
@@ -106,7 +154,7 @@ import "../styles/global.css";
       </section>
 
       <!-- Features Section -->
-      <section class="section-padding">
+      <section class="section-padding" id="features">
         <div class="container-custom">
           <h2
             class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
@@ -160,11 +208,8 @@ import "../styles/global.css";
                     "ONT is built for people who want to get better every day 💪🏾",
                 },
               ].map((feature, index) => (
-                <div
-                  key={index}
-                  class="card-glass p-6 rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 group"
-                >
-                  <feature.icon  class="h-12 w-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                <div class="card-glass p-6 rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 group">
+                  <feature.icon class="h-12 w-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
                   <h3 class="font-display text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                     {feature.title}
                   </h3>
@@ -177,9 +222,9 @@ import "../styles/global.css";
       </section>
 
       <!-- Why ONT -->
-      <section class="section-padding bg-charcoal/30">
+      <section class="section-padding bg-charcoal/30" id="why">
         <div class="container-custom">
-          <div class="max-w-4xl mx-auto space-y-8">
+          <div class="max-w-5xl mx-auto space-y-8 flex flex-col items-center">
             <h2
               class="font-display text-4xl md:text-5xl font-bold text-center gold-underline pb-4"
             >
@@ -193,11 +238,11 @@ import "../styles/global.css";
                 Most social apps give you entertainment.
               </p>
               <p class="text-2xl font-bold gradient-text">
-                ONT gives you both   with purpose.
+                ONT gives you both with purpose.
               </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 mt-12">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-20 mt-12">
               {
                 [
                   "Structure",
@@ -207,7 +252,7 @@ import "../styles/global.css";
                   "Accountability",
                 ].map((item) => (
                   <div class="flex items-center gap-3 text-lg">
-                    <CheckCircle2  class="h-6 w-6 text-primary flex-shrink-0" />
+                    <CircleCheckIcon class="h-6 w-6 text-primary flex-shrink-0" />
                     <span class="font-semibold">{item}</span>
                   </div>
                 ))
@@ -229,7 +274,7 @@ import "../styles/global.css";
       </section>
 
       <!-- About Us -->
-      <section class="section-padding">
+      <section class="section-padding" id="about">
         <div class="container-custom">
           <div class="max-w-4xl mx-auto text-center space-y-6">
             <h2
@@ -412,7 +457,7 @@ import "../styles/global.css";
       </section>
 
       <!-- Early Access Waitlist -->
-      <section class="section-padding">
+      <section class="section-padding" id="waitlist">
         <div class="container-custom">
           <div class="max-w-2xl mx-auto text-center space-y-8">
             <div class="space-y-4">
@@ -455,7 +500,7 @@ import "../styles/global.css";
       <section class="section-padding bg-charcoal/30">
         <div class="container-custom">
           <div class="max-w-4xl mx-auto text-center space-y-8">
-            <Award  class="h-16 w-16 text-primary mx-auto" />
+            <Award class="h-16 w-16 text-primary mx-auto" />
             <h2 class="font-display text-4xl md:text-5xl font-bold">
               Calling All <span class="gradient-text">Creators</span>
             </h2>
@@ -463,7 +508,7 @@ import "../styles/global.css";
               Trainers, Coaches & Fitness Creators
             </p>
             <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-              ONT is building a premium fitness community   and we want creators
+              ONT is building a premium fitness community and we want creators
               who inspire, educate, and motivate.
             </p>
 
@@ -477,18 +522,22 @@ import "../styles/global.css";
                   "Influence the future of the platform",
                 ].map((benefit) => (
                   <div class="flex items-center gap-3">
-                    <CheckCircle2  class="h-5 w-5 text-primary flex-shrink-0" />
+                    <CircleCheckIcon class="h-5 w-5 text-primary flex-shrink-0" />
                     <span>{benefit}</span>
                   </div>
                 ))
               }
             </div>
 
-            <button
-              class="bg-primary text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg mt-8 transition-all"
+            <a
+              href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
             >
-              Apply for Creator Access
-            </button>
+              <button
+                class="bg-green-600 border cursor-pointer text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg mt-8 transition-all"
+              >
+                Apply for Creator Access
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -538,10 +587,10 @@ import "../styles/global.css";
                 ].map((item) => (
                   <div class="card-glass p-6 rounded-lg border border-l-4 border-l-primary hover:bg-card/70 transition-all">
                     <div class="flex items-start gap-4">
-                      <Zap  class="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <Zap class="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
                         <h3 class="font-display text-xl font-bold mb-2">
-                          {item.phase}   {item.title}
+                          {item.phase} {item.title}
                         </h3>
                         <p class="text-muted-foreground">{item.description}</p>
                       </div>
@@ -669,31 +718,59 @@ import "../styles/global.css";
       </footer>
     </main>
 
+    <!-- Replace the existing <script> tag at the bottom with this updated version (fixes TS error by casting to HTMLFormElement) -->
     <script>
       // Waitlist form handler
-      const waitlistForm = document.getElementById("waitlist-form");
+      const waitlistForm = document.getElementById(
+        "waitlist-form"
+      ) as HTMLFormElement;
       waitlistForm?.addEventListener("submit", (e) => {
         e.preventDefault();
         alert("Welcome to ONT! You're on the early access list.");
         waitlistForm.reset();
+        const emailInput = waitlistForm.querySelector(
+          'input[name="email"]'
+        ) as HTMLInputElement;
+        emailInput.value = ""; // Explicit clear
+        emailInput.dispatchEvent(new Event("input", { bubbles: true }));
       });
 
       // Questionnaire form handler
-      const questionnaireForm = document.getElementById("questionnaire-form");
+      const questionnaireForm = document.getElementById(
+        "questionnaire-form"
+      ) as HTMLFormElement;
       questionnaireForm?.addEventListener("submit", (e) => {
         e.preventDefault();
         alert(
           "Thank you for your feedback! This helps us build the best fitness app."
         );
         questionnaireForm.reset();
+        // Explicitly reset selects and textarea for visual consistency
+        questionnaireForm.querySelectorAll("select").forEach((select) => {
+          (select as HTMLSelectElement).value = "";
+          select.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+        const textarea = questionnaireForm.querySelector(
+          'textarea[name="mustUse"]'
+        ) as HTMLTextAreaElement;
+        textarea.value = "";
+        textarea.dispatchEvent(new Event("input", { bubbles: true }));
       });
 
       // Contact form handler
-      const contactForm = document.getElementById("contact-form");
+      const contactForm = document.getElementById(
+        "contact-form"
+      ) as HTMLFormElement;
       contactForm?.addEventListener("submit", (e) => {
         e.preventDefault();
         alert("Message sent! We'll get back to you soon.");
         contactForm.reset();
+        // Explicitly reset inputs and textarea
+        contactForm.querySelectorAll("input, textarea").forEach((input) => {
+          const elem = input as HTMLInputElement | HTMLTextAreaElement;
+          elem.value = "";
+          elem.dispatchEvent(new Event("input", { bubbles: true }));
+        });
       });
     </script>
   </body>
