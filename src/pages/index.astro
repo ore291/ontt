@@ -24,6 +24,8 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>ONT - Overnight Transformations</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body class="min-h-screen bg-background">
     <header
@@ -84,6 +86,7 @@ import "../styles/global.css";
           <div class="space-y-4">
             <h1
               class="font-display text-5xl md:text-7xl lg:text-8xl font-black tracking-tight"
+              data-aos="fade-down"
             >
               Transform Your Life.
               <br />
@@ -864,6 +867,16 @@ import "../styles/global.css";
           alert("Network or server error. Please try again.");
           console.error(err);
         }
+      });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
       });
     </script>
   </body>
