@@ -11,7 +11,11 @@
   "dependencies": {
     "@lucide/astro": "^0.554.0",
     "@tailwindcss/vite": "^4.1.17",
+    "aos": "^2.3.4",
     "astro": "^5.16.0",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
   }
 }

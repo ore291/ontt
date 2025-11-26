@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+
+/* In your global.css */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjusts for sticky header height */
+}
+
 /* -----------------------------------------------------------
    ONT DESIGN SYSTEM (Tailwind v4 compatible)
    - No Tailwind layers used

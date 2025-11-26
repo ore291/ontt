@@ -13,6 +13,8 @@ import {
   ArrowRight,
   CheckCircle2,
   CircleCheckIcon,
+  Menu,
+  X,
 } from "@lucide/astro";
 import "../styles/global.css";
 ---
@@ -31,10 +33,19 @@ import "../styles/global.css";
     <header
       class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all"
     >
-      <nav class="container-custom flex justify-between items-center py-6">
-        <a href="/" class="font-display text-2xl font-bold gradient-text"
-          >OVERNIGHT TRANSFORMATIONS</a
+      <nav
+        class="container-custom flex justify-between items-center py-4 md:py-6"
+      >
+        <!-- Logo - Responsive text size -->
+        <a
+          href="/"
+          class="font-display text-lg sm:text-xl md:text-2xl font-bold gradient-text"
         >
+          <span class="hidden sm:inline">OVERNIGHT TRANSFORMATIONS</span>
+          <span class="sm:hidden">ONT</span>
+        </a>
+
+        <!-- Desktop Navigation -->
         <ul class="hidden md:flex space-x-8 text-sm">
           <li>
             <a href="#waitlist" class="hover-gold transition-colors"
@@ -60,12 +71,76 @@ import "../styles/global.css";
             <a href="#contact" class="hover-gold transition-colors">Contact</a>
           </li>
         </ul>
+
+        <!-- Mobile Menu Button -->
         <button
-          class="md:hidden bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm"
-          >Menu</button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 hover:bg-primary/10 rounded-md transition-colors"
+          aria-label="Toggle menu"
         >
+          <Menu class="h-6 w-6 text-foreground" id="menu-icon" />
+          <X class="h-6 w-6 text-foreground hidden" id="close-icon" />
+        </button>
       </nav>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-background/98 backdrop-blur-sm border-t border-border"
+      >
+        <ul class="container-custom py-6 space-y-4">
+          <li>
+            <a
+              href="#waitlist"
+              class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+            >
+              Join Waitlist
+            </a>
+          </li>
+          <li>
+            <a
+              href="#features"
+              class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+            >
+              Features
+            </a>
+          </li>
+          <li>
+            <a
+              href="#why"
+              class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+            >
+              Why ONT
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#questionnaire"
+              class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+            >
+              Questionnaire
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
+
     <main>
       <!-- Hero Section -->
       <section
@@ -134,6 +209,7 @@ import "../styles/global.css";
           <div class="max-w-4xl mx-auto text-center space-y-6">
             <h2
               class="font-display text-4xl md:text-5xl lg:text-6xl font-bold gold-underline pb-4"
+              data-aos="fade-up"
             >
               What is <span class="gradient-text">ONT?</span>
             </h2>
@@ -158,6 +234,7 @@ import "../styles/global.css";
       <section class="section-padding" id="features">
         <div class="container-custom">
           <h2
+            data-aos="zoom-in"
             class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
           >
             The <span class="gradient-text">ONT System</span>
@@ -209,7 +286,11 @@ import "../styles/global.css";
                     "ONT is built for people who want to get better every day 💪🏾",
                 },
               ].map((feature, index) => (
-                <div class="card-glass p-6 rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 group">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                  class="card-glass p-6 rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 group"
+                >
                   <feature.icon class="h-12 w-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
                   <h3 class="font-display text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                     {feature.title}
@@ -227,12 +308,17 @@ import "../styles/global.css";
         <div class="container-custom">
           <div class="max-w-5xl mx-auto space-y-8 flex flex-col items-center">
             <h2
+              data-aos="fade-down"
               class="font-display text-4xl md:text-5xl font-bold text-center gold-underline pb-4"
             >
               Why <span class="gradient-text">ONT?</span>
             </h2>
 
-            <div class="text-center space-y-6">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              class="text-center space-y-6"
+            >
               <p class="text-xl text-foreground/90">
                 Most fitness apps give you workouts.
                 <br />
@@ -243,7 +329,11 @@ import "../styles/global.css";
               </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-20 mt-12">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-20 mt-12"
+            >
               {
                 [
                   "Structure",
@@ -260,7 +350,11 @@ import "../styles/global.css";
               }
             </div>
 
-            <div class="text-center space-y-4 pt-8">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              class="text-center space-y-4 pt-8"
+            >
               <p class="text-xl font-semibold">
                 This is the future of transformation.
               </p>
@@ -279,11 +373,14 @@ import "../styles/global.css";
         <div class="container-custom">
           <div class="max-w-4xl mx-auto text-center space-y-6">
             <h2
+              data-aos="flip-up"
               class="font-display text-4xl md:text-5xl font-bold gold-underline pb-4"
             >
               The ONT <span class="gradient-text">Mission</span>
             </h2>
             <div
+              data-aos="fade-up"
+              data-aos-delay="100"
               class="space-y-6 text-lg md:text-xl text-foreground/90 leading-relaxed"
             >
               <p>
@@ -314,17 +411,26 @@ import "../styles/global.css";
           <div class="max-w-3xl mx-auto">
             <div class="text-center mb-12 space-y-4">
               <h2
+                data-aos="fade-right"
                 class="font-display text-4xl md:text-5xl font-bold gold-underline pb-4"
               >
                 Help Shape <span class="gradient-text">ONT</span>
               </h2>
-              <p class="text-xl text-muted-foreground">
+              <p
+                data-aos="fade-left"
+                data-aos-delay="100"
+                class="text-xl text-muted-foreground"
+              >
                 Answer a few quick questions to help us build the strongest
                 version of ONT.
               </p>
             </div>
 
-            <div class="card-glass p-8 rounded-lg border">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              class="card-glass p-8 rounded-lg border"
+            >
               <form id="questionnaire-form" class="space-y-8">
                 <div class="space-y-4">
                   <label class="text-lg font-semibold block">
@@ -462,16 +568,25 @@ import "../styles/global.css";
         <div class="container-custom">
           <div class="max-w-2xl mx-auto text-center space-y-8">
             <div class="space-y-4">
-              <h2 class="font-display text-4xl md:text-5xl font-bold">
+              <h2
+                data-aos="fade-down"
+                class="font-display text-4xl md:text-5xl font-bold"
+              >
                 Join <span class="gradient-text">Early Access</span>
               </h2>
-              <p class="text-lg text-muted-foreground">
+              <p
+                data-aos="fade-up"
+                data-aos-delay="100"
+                class="text-lg text-muted-foreground"
+              >
                 Get notified the moment ONT goes live. Join thousands of early
                 members who want first access.
               </p>
             </div>
 
             <form
+              data-aos="zoom-in"
+              data-aos-delay="200"
               id="waitlist-form"
               class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
             >
@@ -503,8 +618,12 @@ import "../styles/global.css";
       <section class="section-padding bg-charcoal/30">
         <div class="container-custom">
           <div class="max-w-4xl mx-auto text-center space-y-8">
-            <Award class="h-16 w-16 text-primary mx-auto" />
-            <h2 class="font-display text-4xl md:text-5xl font-bold">
+            <Award data-aos="bounce" class="h-16 w-16 text-primary mx-auto" />
+            <h2
+              data-aos="fade-up"
+              data-aos-delay="100"
+              class="font-display text-4xl md:text-5xl font-bold"
+            >
               Calling All <span class="gradient-text">Creators</span>
             </h2>
             <p class="text-xl text-foreground/90">
@@ -515,7 +634,11 @@ import "../styles/global.css";
               who inspire, educate, and motivate.
             </p>
 
-            <div class="grid md:grid-cols-2 gap-6 mt-12 text-left">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="grid md:grid-cols-2 gap-6 mt-12 text-left"
+            >
               {
                 [
                   "Post workouts, reels, nutrition tips",
@@ -550,6 +673,7 @@ import "../styles/global.css";
         <div class="container-custom">
           <div class="max-w-4xl mx-auto">
             <h2
+              data-aos="fade-up"
               class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
             >
               The Future of <span class="gradient-text">ONT</span>
@@ -587,8 +711,12 @@ import "../styles/global.css";
                     description:
                       "Challenges, AI coaching, marketplace, premium tiers.",
                   },
-                ].map((item) => (
-                  <div class="card-glass p-6 rounded-lg border border-l-4 border-l-primary hover:bg-card/70 transition-all">
+                ].map((item, index) => (
+                  <div
+                    data-aos="fade-right"
+                    data-aos-delay={index * 150}
+                    class="card-glass p-6 rounded-lg border border-l-4 border-l-primary hover:bg-card/70 transition-all"
+                  >
                     <div class="flex items-start gap-4">
                       <Zap class="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
@@ -611,6 +739,7 @@ import "../styles/global.css";
         <div class="container-custom">
           <div class="max-w-3xl mx-auto">
             <h2
+              data-aos="fade-up"
               class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
             >
               <span class="gradient-text">FAQ</span>
@@ -639,8 +768,12 @@ import "../styles/global.css";
                     q: "How personalised are the plans?",
                     a: "Based on your goals, training level, schedule, and preferences.",
                   },
-                ].map((item) => (
-                  <div class="card-glass p-6 rounded-lg border">
+                ].map((item, index) => (
+                  <div
+                    data-aos="flip-left"
+                    data-aos-delay={index * 100}
+                    class="card-glass p-6 rounded-lg border"
+                  >
                     <h3 class="font-bold text-lg mb-2 text-primary">
                       {item.q}
                     </h3>
@@ -658,10 +791,17 @@ import "../styles/global.css";
         <div class="container-custom">
           <div class="max-w-2xl mx-auto text-center space-y-8">
             <div class="space-y-4">
-              <h2 class="font-display text-4xl md:text-5xl font-bold">
+              <h2
+                data-aos="zoom-in"
+                class="font-display text-4xl md:text-5xl font-bold"
+              >
                 Get in <span class="gradient-text">Touch</span>
               </h2>
-              <p class="text-lg text-muted-foreground">
+              <p
+                data-aos="fade-up"
+                data-aos-delay="100"
+                class="text-lg text-muted-foreground"
+              >
                 Have questions? Want to collaborate? Need support?
               </p>
               <p class="text-primary font-semibold">
@@ -669,7 +809,11 @@ import "../styles/global.css";
               </p>
             </div>
 
-            <div class="card-glass p-8 rounded-lg border">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="card-glass p-8 rounded-lg border"
+            >
               <form id="contact-form" class="space-y-6">
                 <input
                   name="name"
@@ -870,13 +1014,36 @@ import "../styles/global.css";
       });
     </script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
       AOS.init({
         duration: 800,
         easing: "ease-in-out",
         once: true,
         offset: 100,
+      });
+    </script>
+
+    <script>
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+      const menuLinks = document.querySelectorAll(".mobile-menu-link");
+
+      menuBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+        menuIcon?.classList.toggle("hidden");
+        closeIcon?.classList.toggle("hidden");
+      });
+
+      // Close menu when a link is clicked
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu?.classList.add("hidden");
+          menuIcon?.classList.remove("hidden");
+          closeIcon?.classList.add("hidden");
+        });
       });
     </script>
   </body>
