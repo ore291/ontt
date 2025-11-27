@@ -7,6 +7,17 @@ html {
   scroll-padding-top: 80px; /* Adjusts for sticky header height */
 }
 
+.section-padding {
+  overflow-x: clip;
+  max-width: 100vw;
+}
+
+.container-custom {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 /* -----------------------------------------------------------
    ONT DESIGN SYSTEM (Tailwind v4 compatible)
    - No Tailwind layers used

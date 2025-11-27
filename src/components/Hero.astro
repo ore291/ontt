@@ -1,65 +1,67 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../images/logo.jpeg";
-import { ArrowRight, Menu, X } from "@lucide/astro";
+import { ArrowRight } from "@lucide/astro";
+import heroImg from "../images/hero.png";
 ---
 
-<section
-class="relative min-h-screen flex items-center justify-center overflow-hidden"
->
-<div
-  class="absolute inset-0 bg-linear-to-b from-background via-charcoal to-background"
->
-</div>
-<div
-  class="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--gold)/0.1)_0%,transparent_65%)]"
->
-</div>
 
-<div
-  class="container-custom relative z-10 text-center space-y-8 animate-fade-in"
+
+<section
+  class="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
+  style={`background-image: url(${heroImg.src}); background-size: cover; background-position: center;`}
 >
-  <div class="space-y-4">
-    <h1
-      class="font-display text-5xl md:text-7xl lg:text-8xl font-black tracking-tight"
-      data-aos="fade-down"
-    >
-      Transform Your Life.
-      <br />
-      <span class="gradient-text">Build Your Discipline.</span>
-      <br />
-      Join ONT.
-    </h1>
-    <p
-      class="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
-    >
-      The luxury social fitness platform built for real transformation
-      workouts, nutrition, community, and motivation combined into one
-      powerful ecosystem.
-    </p>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-black/10"></div>
+
+  <!-- Gradient overlays -->
+  <div
+    class="absolute inset-0 bg-linear-to-b from-background via-charcoal to-background"
+  >
+  </div>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--gold)/0.1)_0%,transparent_65%)]"
+  >
   </div>
 
   <div
-    class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+    class="container-custom relative z-10 text-center space-y-8 animate-fade-in"
   >
-    <a href="#waitlist">
-      <button
-        class="bg-primary hover:bg-gray-900 cursor-pointer border text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
+    <div class="space-y-4">
+      <h1
+        class="font-display text-5xl md:text-7xl lg:text-8xl font-black tracking-tight"
+        data-aos="fade-down"
       >
-        Join Early Access
-        <ArrowRight class="ml-2 h-5 w-5 inline" />
-      </button>
-    </a>
-    <a
-      href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
-    >
-      <button
-        class="border hover:bg-gray-900 cursor-pointer border-primary text-primary font-bold hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
+        Transform Your Life.
+        <br />
+        <span class="gradient-text">Build Your Discipline.</span>
+        <br />
+        Join ONT.
+      </h1>
+      <p class="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+        The luxury social fitness platform built for real transformation
+        workouts, nutrition, community, and motivation combined into one
+        powerful ecosystem.
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="#waitlist">
+        <button
+          class="bg-primary hover:bg-gray-900 cursor-pointer border text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
+        >
+          Join Early Access
+          <ArrowRight class="ml-2 h-5 w-5 inline" />
+        </button>
+      </a>
+      <a
+        href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
       >
-        Become a Creator
-        <ArrowRight class="ml-2 h-5 w-5 inline" />
-      </button>
-    </a>
+        <button
+          class="border hover:bg-gray-900 cursor-pointer border-primary text-primary font-bold hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
+        >
+          Become a Creator
+          <ArrowRight class="ml-2 h-5 w-5 inline" />
+        </button>
+      </a>
+    </div>
   </div>
-</div>
 </section>
