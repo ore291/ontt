@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import logo from "../images/logo.jpeg";
+import { Menu, X } from "@lucide/astro";
+---
+
+
+<footer class="bg-charcoal/50 border-t border-border py-12">
+    <div class="container-custom">
+      <div class="flex flex-col items-center text-center space-y-6">
+        <Image
+          src={logo}
+          alt="OVERNIGHT TRANSFORMATIONS logo"
+          width={80}
+          height={80}
+        />
+        <nav class="flex flex-wrap justify-center gap-6 text-sm">
+          <a href="#" class="hover-gold">Home</a>
+          <a href="#" class="hover-gold">Features</a>
+          <a href="#" class="hover-gold">About</a>
+          <a href="#questionnaire" class="hover-gold">Questionnaire</a>
+          <a href="#contact" class="hover-gold">Contact</a>
+        </nav>
+        <p class="text-sm text-muted-foreground">
+          Copyright © 2025 Overnight Transformations. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>

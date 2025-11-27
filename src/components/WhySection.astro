@@ -1,0 +1,68 @@
+---
+import { CircleCheckIcon } from "@lucide/astro";
+
+---
+
+<section class="section-padding bg-charcoal/30" id="why">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto space-y-8 flex flex-col items-center">
+        <h2
+          data-aos="fade-down"
+          class="font-display text-4xl md:text-5xl font-bold text-center gold-underline pb-4"
+        >
+          Why <span class="gradient-text">ONT?</span>
+        </h2>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="text-center space-y-6"
+        >
+          <p class="text-xl text-foreground/90">
+            Most fitness apps give you workouts.
+            <br />
+            Most social apps give you entertainment.
+          </p>
+          <p class="text-2xl font-bold gradient-text">
+            ONT gives you both with purpose.
+          </p>
+        </div>
+
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-20 mt-12"
+        >
+          {
+            [
+              "Structure",
+              "Personalisation",
+              "Motivation",
+              "Community",
+              "Accountability",
+            ].map((item) => (
+              <div class="flex items-center gap-3 text-lg">
+                <CircleCheckIcon class="h-6 w-6 text-primary shrink-0" />
+                <span class="font-semibold">{item}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="text-center space-y-4 pt-8"
+        >
+          <p class="text-xl font-semibold">
+            This is the future of transformation.
+          </p>
+          <div class="space-y-2 text-lg text-muted-foreground">
+            <p>Your plan.</p>
+            <p>Your progress.</p>
+            <p>Your people.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

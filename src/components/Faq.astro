@@ -1,0 +1,54 @@
+---
+
+---
+
+<section class="section-padding bg-charcoal/30">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <h2
+          data-aos="fade-up"
+          class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
+        >
+          <span class="gradient-text">FAQ</span>
+        </h2>
+
+        <div class="space-y-6">
+          {
+            [
+              {
+                q: "When is the ONT app launching?",
+                a: "We are currently in development with early access planned soon.",
+              },
+              {
+                q: "Will ONT be free?",
+                a: "Yes   with optional premium features later.",
+              },
+              {
+                q: "Will it work on iPhone and Android?",
+                a: "Yes, ONT will launch on both platforms.",
+              },
+              {
+                q: "Can creators upload content?",
+                a: "Yes   workouts, reels, transformations, meals, motivational content.",
+              },
+              {
+                q: "How personalised are the plans?",
+                a: "Based on your goals, training level, schedule, and preferences.",
+              },
+            ].map((item, index) => (
+              <div
+                data-aos="flip-left"
+                data-aos-delay={index * 100}
+                class="card-glass p-6 rounded-lg border"
+              >
+                <h3 class="font-bold text-lg mb-2 text-primary">
+                  {item.q}
+                </h3>
+                <p class="text-muted-foreground">{item.a}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>

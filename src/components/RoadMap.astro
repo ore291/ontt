@@ -1,0 +1,70 @@
+---
+import { Zap } from "@lucide/astro";
+
+
+---
+
+<section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2
+          data-aos="fade-up"
+          class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
+        >
+          The Future of <span class="gradient-text">ONT</span>
+        </h2>
+
+        <div class="space-y-8">
+          {
+            [
+              {
+                phase: "Phase 1",
+                title: "ONT Foundations",
+                description:
+                  "Brand, website, early community, research, creator recruitment.",
+              },
+              {
+                phase: "Phase 2",
+                title: "App Development",
+                description:
+                  "Workout engine, nutrition, profiles, content feed.",
+              },
+              {
+                phase: "Phase 3",
+                title: "ONT Social",
+                description: "Follows, likes, comments, reels public feed.",
+              },
+              {
+                phase: "Phase 4",
+                title: "Release",
+                description:
+                  "iOS & Android launch with early access users.",
+              },
+              {
+                phase: "Phase 5",
+                title: "Expansion",
+                description:
+                  "Challenges, AI coaching, marketplace, premium tiers.",
+              },
+            ].map((item, index) => (
+              <div
+                data-aos="fade-right"
+                data-aos-delay={index * 150}
+                class="card-glass p-6 rounded-lg border border-l-4 border-l-primary hover:bg-card/70 transition-all"
+              >
+                <div class="flex items-start gap-4">
+                  <Zap class="h-6 w-6 text-primary shrink-0 mt-1" />
+                  <div>
+                    <h3 class="font-display text-xl font-bold mb-2">
+                      {item.phase} {item.title}
+                    </h3>
+                    <p class="text-muted-foreground">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>

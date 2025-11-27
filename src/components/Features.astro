@@ -1,0 +1,76 @@
+---
+import { Dumbbell, Apple, Users, Video, Heart, TrendingUp, Target } from "@lucide/astro";
+
+---
+
+<section class="section-padding" id="features">
+    <div class="container-custom">
+      <h2
+        data-aos="zoom-in"
+        class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gold-underline pb-4"
+      >
+        The <span class="gradient-text">ONT System</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          [
+            {
+              icon: Dumbbell,
+              title: "Personalised Workout Plans",
+              description:
+                "Custom routines built around your level, your goals, and your schedule.",
+            },
+            {
+              icon: Apple,
+              title: "Smart Nutrition Plans",
+              description:
+                "Daily meal guidance and personalised targets for real results.",
+            },
+            {
+              icon: Users,
+              title: "Social Fitness Profiles",
+              description:
+                "Post your journey. Build a following. Share your training, meals, and progress.",
+            },
+            {
+              icon: Video,
+              title: "Public Reels Feed",
+              description:
+                "Workouts, meals, motivation, lifestyle, transformations   all in one feed.",
+            },
+            {
+              icon: Heart,
+              title: "Community Engagement",
+              description:
+                "Follow, like, comment, share   motivate and be motivated.",
+            },
+            {
+              icon: TrendingUp,
+              title: "Progress & Consistency Tracking",
+              description:
+                "Track weight, habits, workouts, meals, and streaks.",
+            },
+            {
+              icon: Target,
+              title: "Discipline-Powered Design",
+              description:
+                "ONT is built for people who want to get better every day 💪🏾",
+            },
+          ].map((feature, index) => (
+            <div
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              class="card-glass p-6 rounded-lg border hover:border-primary/50 transition-all duration-300 hover:scale-105 group"
+            >
+              <feature.icon class="h-12 w-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
+              <h3 class="font-display text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                {feature.title}
+              </h3>
+              <p class="text-muted-foreground">{feature.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,129 @@
+---
+import { Image } from "astro:assets";
+import logo from "../images/logo.jpeg";
+import { Menu, X } from "@lucide/astro";
+---
+
+<header
+  class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all"
+>
+  <nav class="container-custom flex justify-between items-center py-4">
+    <!-- Logo - Responsive text size -->
+    <a
+      href="/"
+      class="font-display text-lg sm:text-xl md:text-2xl font-bold gradient-text"
+    >
+      <div class="hidden sm:flex items-center gap-2" class="">
+        <Image
+          src={logo}
+          alt="OVERNIGHT TRANSFORMATIONS logo"
+          width={80}
+          height={80}
+        />
+        <span>OVERNIGHT TRANSFORMATIONS</span>
+      </div>
+
+      <Image
+        class="sm:hidden"
+        src={logo}
+        quality="max"
+        alt="OVERNIGHT TRANSFORMATIONS logo"
+        width={80}
+        height={80}
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="hidden md:flex space-x-8 text-sm">
+      <li>
+        <a href="#waitlist" class="hover-gold transition-colors"
+          >Join Waitlist</a
+        >
+      </li>
+      <li>
+        <a href="#features" class="hover-gold transition-colors">Features</a>
+      </li>
+      <li>
+        <a href="#why" class="hover-gold transition-colors">Why ONT</a>
+      </li>
+      <li>
+        <a href="#about" class="hover-gold transition-colors">About</a>
+      </li>
+      <li>
+        <a href="#questionnaire" class="hover-gold transition-colors"
+          >Questionnaire</a
+        >
+      </li>
+      <li>
+        <a href="#contact" class="hover-gold transition-colors">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 hover:bg-primary/10 rounded-md transition-colors"
+      aria-label="Toggle menu"
+    >
+      <Menu class="h-6 w-6 text-foreground" id="menu-icon" />
+      <X class="h-6 w-6 text-foreground hidden" id="close-icon" />
+    </button>
+  </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-background/98 backdrop-blur-sm border-t border-border"
+  >
+    <ul class="container-custom py-6 space-y-4">
+      <li>
+        <a
+          href="#waitlist"
+          class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+        >
+          Join Waitlist
+        </a>
+      </li>
+      <li>
+        <a
+          href="#features"
+          class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+        >
+          Features
+        </a>
+      </li>
+      <li>
+        <a
+          href="#why"
+          class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+        >
+          Why ONT
+        </a>
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+        >
+          About
+        </a>
+      </li>
+      <li>
+        <a
+          href="#questionnaire"
+          class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+        >
+          Questionnaire
+        </a>
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="block py-2 text-lg hover-gold transition-colors mobile-menu-link"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>

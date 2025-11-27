@@ -1,0 +1,58 @@
+---
+import { Award, CircleCheckIcon } from "@lucide/astro";
+
+
+---
+
+<section class="section-padding bg-charcoal/30">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center space-y-8">
+        <Award data-aos="bounce" class="h-16 w-16 text-primary mx-auto" />
+        <h2
+          data-aos="fade-up"
+          data-aos-delay="100"
+          class="font-display text-4xl md:text-5xl font-bold"
+        >
+          Calling All <span class="gradient-text">Creators</span>
+        </h2>
+        <p class="text-xl text-foreground/90">
+          Trainers, Coaches & Fitness Creators
+        </p>
+        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+          ONT is building a premium fitness community and we want creators
+          who inspire, educate, and motivate.
+        </p>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="grid md:grid-cols-2 gap-6 mt-12 text-left"
+        >
+          {
+            [
+              "Post workouts, reels, nutrition tips",
+              "Build a following",
+              "Grow a loyal fitness community",
+              "Increase visibility",
+              "Influence the future of the platform",
+            ].map((benefit) => (
+              <div class="flex items-center gap-3">
+                <CircleCheckIcon class="h-5 w-5 text-primary shrink-0" />
+                <span>{benefit}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <a
+          href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
+        >
+          <button
+            class="bg-[#CFB53B] border cursor-pointer text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg mt-8 transition-all font-bold"
+          >
+            Apply for Creator Access
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
