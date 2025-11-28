@@ -185,27 +185,5 @@ import Footer from "../components/Footer.astro";
       });
     </script>
 
-    <script>
-      const menuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
-      const closeIcon = document.getElementById("close-icon");
-      const menuLinks = document.querySelectorAll(".mobile-menu-link");
-
-      menuBtn?.addEventListener("click", () => {
-        mobileMenu?.classList.toggle("hidden");
-        menuIcon?.classList.toggle("hidden");
-        closeIcon?.classList.toggle("hidden");
-      });
-
-      // Close menu when a link is clicked
-      menuLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu?.classList.add("hidden");
-          menuIcon?.classList.remove("hidden");
-          closeIcon?.classList.add("hidden");
-        });
-      });
-    </script>
   </body>
 </html>

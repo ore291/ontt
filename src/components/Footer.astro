@@ -1,29 +1,60 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../images/logo.jpeg";
-import { Menu, X } from "@lucide/astro";
 ---
 
-
 <footer class="bg-charcoal/50 border-t border-border py-12">
-    <div class="container-custom">
-      <div class="flex flex-col items-center text-center space-y-6">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <!-- Logo and Description -->
+      <div class="flex flex-col items-center md:items-start">
         <Image
           src={logo}
           alt="OVERNIGHT TRANSFORMATIONS logo"
           width={80}
           height={80}
+          class="mb-4"
         />
-        <nav class="flex flex-wrap justify-center gap-6 text-sm">
-          <a href="#" class="hover-gold">Home</a>
-          <a href="#" class="hover-gold">Features</a>
-          <a href="#" class="hover-gold">About</a>
-          <a href="#questionnaire" class="hover-gold">Questionnaire</a>
-          <a href="#contact" class="hover-gold">Contact</a>
-        </nav>
-        <p class="text-sm text-muted-foreground">
-          Copyright © 2025 Overnight Transformations. All rights reserved.
+        <p class="text-sm text-muted-foreground text-center md:text-left">
+          Transform your life overnight with personalized plans and expert guidance.
         </p>
       </div>
+
+      <!-- Get Started Links -->
+      <div class="text-center md:text-left">
+        <h3 class="font-semibold mb-4 gradient-text">Get Started</h3>
+        <nav class="flex flex-col space-y-2">
+          <a href="/waitlist" class="text-sm hover-gold transition-colors">Join Waitlist</a>
+          <a href="/questionnaire" class="text-sm hover-gold transition-colors">Questionnaire</a>
+          <a href="/roadmap" class="text-sm hover-gold transition-colors">Roadmap</a>
+        </nav>
+      </div>
+
+      <!-- Resources Links -->
+      <div class="text-center md:text-left">
+        <h3 class="font-semibold mb-4 gradient-text">Resources</h3>
+        <nav class="flex flex-col space-y-2">
+          <a href="/faq" class="text-sm hover-gold transition-colors">FAQ</a>
+          <a href="/why-ontt" class="text-sm hover-gold transition-colors">Why ONT</a>
+        </nav>
+      </div>
+
+      <!-- Company Links -->
+      <div class="text-center md:text-left">
+        <h3 class="font-semibold mb-4 gradient-text">Company</h3>
+        <nav class="flex flex-col space-y-2">
+          <a href="/about-us" class="text-sm hover-gold transition-colors">About Us</a>
+          <a href="/creator-recruitment" class="text-sm hover-gold transition-colors">Become a Creator</a>
+          <a href="/contact-us" class="text-sm hover-gold transition-colors">Contact Us</a>
+        </nav>
+      </div>
     </div>
-  </footer>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-border pt-8">
+      <p class="text-sm text-muted-foreground text-center">
+        Copyright © 2025 Overnight Transformations. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
