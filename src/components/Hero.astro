@@ -7,8 +7,9 @@ import heroImg from "../images/hero.webp";
 
 <section
   class="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
-  style={`background-image: url(${heroImg.src}); background-size: cover; background-position: center;`}
+  style="background-image: url('/hero.webp'); background-size: cover; background-position: center;"
 >
+
   <!-- Dark overlay -->
   <div class="absolute inset-0 bg-black/10"></div>
 
@@ -27,7 +28,7 @@ import heroImg from "../images/hero.webp";
   >
     <div class="space-y-4">
       <h1
-        class="font-display text-5xl md:text-7xl lg:text-8xl font-black tracking-tight"
+        class="font-display text-5xl md:text-6xl 2xl:text-7xl  font-black tracking-tight"
         data-aos="fade-down"
       >
         Transform Your Life.
@@ -44,7 +45,7 @@ import heroImg from "../images/hero.webp";
     </div>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href="#waitlist">
+      <a href="/waitlist">
         <button
           class="bg-primary hover:bg-gray-900 cursor-pointer border text-primary-foreground hover:bg-primary-glow text-lg px-8 py-6 rounded-md shadow-lg hover:shadow-gold transition-all"
         >
@@ -53,7 +54,7 @@ import heroImg from "../images/hero.webp";
         </button>
       </a>
       <a
-        href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
+        href="/creator-recruitment"
       >
         <button
           class="border hover:bg-gray-900 cursor-pointer border-primary text-primary font-bold hover:bg-primary/10 text-lg px-8 py-6 rounded-md"
