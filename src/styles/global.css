@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 /* In your global.css */
 html {
   scroll-behavior: smooth;
@@ -27,12 +26,16 @@ html {
 
 :root {
   /* ONT Black & Gold Luxury Theme */
-  --background: 0 0% 0%;
+  --background: 0 0% 6%;
   --foreground: 0 0% 98%;
 
-  --primary: 45 100% 51%;
+  --charcoal: 285 10% 12%;
+
+  --primary: 42 83% 55%;
+--primary-glow: 42 92% 68%;
+
+  
   --primary-foreground: 0 0% 0%;
-  --primary-glow: 48 100% 67%;
 
   --secondary: 0 0% 10%;
   --secondary-foreground: 0 0% 98%;
