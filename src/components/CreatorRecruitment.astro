@@ -1,58 +1,485 @@
 ---
 import { Award, CircleCheckIcon } from "@lucide/astro";
-
-
 ---
 
 <section class="section-padding bg-charcoal/30">
-    <div class="container-custom">
-      <div class="max-w-4xl mx-auto text-center space-y-8">
-        <Award data-aos="bounce" class="h-16 w-16 text-primary mx-auto" />
-        <h2
-          data-aos="fade-up"
-          data-aos-delay="100"
-          class="font-display text-4xl md:text-5xl font-bold"
-        >
-          Calling All <span class="gradient-text">Creators</span>
-        </h2>
-        <p class="text-xl text-foreground/90">
-          Trainers, Coaches & Fitness Creators
-        </p>
-        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-          ONT is building a premium fitness community and we want creators
-          who inspire, educate, and motivate.
-        </p>
+  <div class="container-custom">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <Award data-aos="bounce" class="h-16 w-16 text-primary mx-auto" />
+      <h2
+        data-aos="fade-up"
+        data-aos-delay="100"
+        class="font-display text-4xl md:text-5xl font-bold"
+      >
+        BECOME A <span class="gradient-text">CREATOR</span>
+      </h2>
+      <p class="text-xl text-foreground/90">
+        Share Your Expertise. Inspire Transformations. Earn From Your Knowledge.
+      </p>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Join ONT as a Creator and help people achieve life-changing fitness
+        results. Fill out the form below to apply and start earning through
+        personalised workout plans, nutrition guides, community content and
+        more.
+      </p>
+
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        class="card-glass p-8 rounded-lg border"
+      >
+        <form id="creator-form" class="space-y-8">
+          <!-- Personal Details Section -->
+          <div class="border-b border-gray-200 pb-6">
+            <h2 class="text-2xl font-bold  mb-6">
+              Personal Details
+            </h2>
+
+            <div class="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold  mb-2">
+                  Full Name <span class="text-white">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="fullName"
+                  class="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:border-none"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold  mb-2">
+                  Email Address <span class="text-white">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  class="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:border-none"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold  mb-2">
+                  Phone Number (Optional)
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  class="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:border-none"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold  mb-2">
+                  Location (City / Country) <span class="text-white">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="e.g., Woolwich, UK"
+                  class="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent focus:border-none"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Fitness Specialisation Section -->
+          <div class="border-b border-gray-200 pb-6">
+            <h2 class="text-2xl font-bold  mb-6">
+              Fitness Specialisation
+            </h2>
+
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-semibold  mb-3">
+                  What type of creator are you? <span class="text-white"
+                    >*</span
+                  >
+                </label>
+                <div class="space-y-2">
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="creatorType"
+                      value="personal-trainer"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                      required
+                    />
+                    <span class="">Certified Personal Trainer</span
+                    >
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="creatorType"
+                      value="nutrition-coach"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class="">Nutrition Coach</span>
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="creatorType"
+                      value="bodybuilding"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class=""
+                      >Bodybuilding / Strength Coach</span
+                    >
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="creatorType"
+                      value="weight-loss"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class="">Weight Loss Coach</span>
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="creatorType"
+                      value="calisthenics"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class="">Calisthenics Trainer</span>
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="creatorType"
+                      value="transformation"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class=""
+                      >Physique Transformation Specialist</span
+                    >
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="creatorType"
+                      value="other"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class="">Other</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="creatorTypeOther"
+                    placeholder="Please specify..."
+                    class="w-full p-3 border border-border rounded-md focus:ring-2 focus:ring-yellow-500 focus:border-transparent ml-7"
+                    id="otherCreatorType"
+                    style="display: none;"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold  mb-3">
+                  Years of Experience <span class="text-white">*</span>
+                </label>
+                <div class="space-y-2">
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="0-1"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                      required
+                    />
+                    <span class="">0–1 years</span>
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="1-3"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class="">1–3 years</span>
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="3-5"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class="">3–5 years</span>
+                  </label>
+                  <label
+                    class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="5+"
+                      class="mr-3 w-4 h-4 text-yellow-600"
+                    />
+                    <span class="">5+ years</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Type Section -->
+          <div class="pb-6">
+            <h2 class="text-2xl font-bold  mb-3">
+              Content Creation
+            </h2>
+            <p class="text-sm text-gray-200 mb-4">
+              What type of content do you want to create? (Select all that
+              apply)
+            </p>
+
+            <div class="space-y-2">
+              <label
+                class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  name="contentType[]"
+                  value="workout-plans"
+                  class="mr-3 w-4 h-4 text-yellow-600"
+                />
+                <span class="">Workout plans</span>
+              </label>
+              <label
+                class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  name="contentType[]"
+                  value="nutrition-plans"
+                  class="mr-3 w-4 h-4 text-yellow-600"
+                />
+                <span class="">Nutrition plans</span>
+              </label>
+              <label
+                class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  name="contentType[]"
+                  value="transformation-challenges"
+                  class="mr-3 w-4 h-4 text-yellow-600"
+                />
+                <span class="">Transformation challenges</span>
+              </label>
+              <label
+                class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  name="contentType[]"
+                  value="live-workouts"
+                  class="mr-3 w-4 h-4 text-yellow-600"
+                />
+                <span class="">Live workouts</span>
+              </label>
+              <label
+                class="flex items-center p-3 border border-border rounded-md hover:bg-yellow-600 cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  name="contentType[]"
+                  value="short-videos"
+                  class="mr-3 w-4 h-4 text-yellow-600"
+                />
+                <span class="">Short videos / reels</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-[#CFB53B] cursor-pointer hover:bg-[#b89f2f] text-white font-bold px-8 py-4 rounded-md text-lg transition-all shadow-lg hover:shadow-xl"
+          >
+            Submit Application
+          </button>
+        </form>
 
         <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          class="grid md:grid-cols-2 gap-6 mt-12 text-left"
+          id="success-message"
+          class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md"
         >
-          {
-            [
-              "Post workouts, reels, nutrition tips",
-              "Build a following",
-              "Grow a loyal fitness community",
-              "Increase visibility",
-              "Influence the future of the platform",
-            ].map((benefit) => (
-              <div class="flex items-center gap-3">
-                <CircleCheckIcon class="h-5 w-5 text-primary shrink-0" />
-                <span>{benefit}</span>
-              </div>
-            ))
-          }
+          <p class="font-semibold">Thank you for applying!</p>
+          <p class="text-sm">
+            We'll review your application and get back to you soon.
+          </p>
         </div>
-
-        <a
-          href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
-        >
-          <button
-            class="bg-[#CFB53B] border cursor-pointer text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg mt-8 transition-all font-bold"
-          >
-            Apply for Creator Access
-          </button>
-        </a>
       </div>
+
+      <!-- <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="grid md:grid-cols-2 gap-6 mt-12 text-left"
+      >
+        {
+          [
+            "Post workouts, reels, nutrition tips",
+            "Build a following",
+            "Grow a loyal fitness community",
+            "Increase visibility",
+            "Influence the future of the platform",
+          ].map((benefit) => (
+            <div class="flex items-center gap-3">
+              <CircleCheckIcon class="h-5 w-5 text-primary shrink-0" />
+              <span>{benefit}</span>
+            </div>
+          ))
+        }
+      </div>
+
+      <a
+        href="mailto:support@overnighttransformations.com?subject=Creator%20Access%20Application&body=Hi%2C%20I%20would%20like%20to%20apply%20for%20creator%20access."
+      >
+        <button
+          class="bg-[#CFB53B] border cursor-pointer text-primary-foreground hover:bg-primary-glow px-8 py-4 rounded-md text-lg mt-8 transition-all font-bold"
+        >
+          Apply for Creator Access
+        </button>
+      </a> -->
     </div>
-  </section>
+  </div>
+</section>
+
+
+<script>
+    const form = document.getElementById('creator-form') as HTMLFormElement;
+    const successMessage = document.getElementById('success-message') as HTMLElement;
+    const otherInput = document.getElementById('otherCreatorType') as HTMLInputElement;
+
+
+     // Utility functions for loader
+      const showLoader = () => {
+        const loader = document.getElementById("form-loader");
+        if (loader) loader.classList.add("active");
+      };
+      
+      const hideLoader = () => {
+        const loader = document.getElementById("form-loader");
+        if (loader) loader.classList.remove("active");
+      };
+    
+    // Show/hide "Other" text input
+    const creatorTypeRadios = document.querySelectorAll('input[name="creatorType"]');
+    
+    creatorTypeRadios?.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        
+        if (otherInput) {
+          if (target?.value === 'other') {
+            otherInput.style.display = 'block';
+            otherInput.required = true;
+          } else {
+            otherInput.style.display = 'none';
+            otherInput.required = false;
+            otherInput.value = '';
+          }
+        }
+      });
+    });
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Validate at least one content type is selected
+      const contentTypes = document.querySelectorAll('input[name="contentType[]"]:checked');
+      
+      if (contentTypes.length === 0) {
+        alert('Please select at least one type of content you want to create.');
+        return;
+      }
+      
+       
+          showLoader();
+
+
+      // Collect form data
+      const data = new FormData(form);
+
+        data.append("form_id", "4");
+        data.append("waitlist-submit", "waitlist-submit");
+      
+      console.log(data);
+      
+      try {
+        const r = await fetch( "https://overnighttransformations.com/forms/ft_ajax.php", {
+          method: 'POST',
+          body: data,
+        });
+
+        const json = await r.json();
+
+        if (json.success) {
+          // Show success message
+          if (successMessage) {
+            form.style.display = 'none';
+            successMessage.classList.remove('hidden');
+          }
+          
+          form.reset();
+          
+          // Explicitly reset inputs, textareas, and checkboxes
+          form.querySelectorAll('input, textarea, select').forEach((input) => {
+            const elem = input as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+            
+            if (elem.type === 'checkbox' || elem.type === 'radio') {
+              (elem as HTMLInputElement).checked = false;
+            } else {
+              elem.value = '';
+            }
+            
+            elem.dispatchEvent(new Event('input', { bubbles: true }));
+          });
+          
+          // Reset "Other" input visibility
+          if (otherInput) {
+            otherInput.style.display = 'none';
+            otherInput.required = false;
+          }
+        } else {
+          // Show real server error
+          alert(
+            json.error ||
+              'There was an error submitting the form. Please try again.'
+          );
+        }
+      } catch (err) {
+        alert('Network or server error. Please try again.');
+        console.error(err);
+      } finally {
+        hideLoader();
+      }
+    });
+  </script>

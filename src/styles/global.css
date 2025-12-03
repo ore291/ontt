@@ -104,13 +104,13 @@ html {
 
 * {
   border-color: hsl(var(--border));
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  @apply antialiased font-sans;
   background: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h1,
@@ -120,7 +120,7 @@ h4,
 h5,
 h6 {
   @apply font-bold;
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* -----------------------------------------------------------
@@ -128,7 +128,8 @@ h6 {
 ------------------------------------------------------------*/
 
 .section-padding {
-  @apply py-16 md:py-24 lg:py-32;
+@apply py-12 md:py-20 lg:py-28;
+
 }
 
 .container-custom {

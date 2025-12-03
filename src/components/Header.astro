@@ -1,41 +1,45 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../images/logo.jpeg";
-import { Menu, X, ChevronDown } from "@lucide/astro"
+import { Menu, X, ChevronDown } from "@lucide/astro";
 
 // Get current path for active link highlighting
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all">
+<header
+  class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border transition-all"
+>
   <nav class="container-custom flex justify-between items-center py-4">
     <!-- Logo - Responsive text size -->
-    <a href="/" class="font-display text-lg sm:text-xl md:text-2xl font-bold gradient-text">
+    <a
+      href="/"
+      class="font-display text-lg sm:text-xl md:text-2xl font-bold gradient-text"
+    >
       <div class="hidden sm:flex items-center gap-2">
         <Image
-          src={logo}
+          src="/logo.png"
           alt="OVERNIGHT TRANSFORMATIONS logo"
-          width={80}
-          height={80}
+          width={100}
+          height={100}
         />
         <span>OVERNIGHT TRANSFORMATIONS</span>
       </div>
 
       <Image
         class="sm:hidden"
-        src={logo}
+        src="/logo.png"
         quality="max"
         alt="OVERNIGHT TRANSFORMATIONS logo"
-        width={80}
-        height={80}
+        width={60}
+        height={60}
       />
     </a>
 
     <!-- Desktop Navigation -->
     <ul class="hidden md:flex space-x-8 text-sm items-center">
       <li>
-        <a 
-          href="/waitlist" 
+        <a
+          href="/waitlist"
           class={`hover:text-[#CFB53B] transition-colors ${
             currentPath === "/waitlist" ? "text-[#CFB53B] font-semibold" : ""
           }`}
@@ -43,33 +47,41 @@ const currentPath = Astro.url.pathname;
           Join Waitlist
         </a>
       </li>
-      
+
       <!-- Get Started Dropdown -->
       <li class="relative group">
-        <button 
+        <button
           class={`hover:text-[#CFB53B] transition-colors flex items-center gap-1 ${
-            currentPath === "/questionnaire" || currentPath === "/roadmap" ? "text-primary font-semibold" : ""
+            currentPath === "/questionnaire" || currentPath === "/roadmap"
+              ? "text-primary font-semibold"
+              : ""
           }`}
         >
           Get Started
           <ChevronDown class="h-4 w-4" />
         </button>
-        <ul class="absolute left-0 top-full mt-2 w-48 bg-background border border-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <ul
+          class="absolute left-0 top-full mt-2 w-48 bg-background border border-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+        >
           <li>
-            <a 
-              href="/questionnaire" 
+            <a
+              href="/questionnaire"
               class={`block px-4 py-2 hover:bg-primary/10 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/questionnaire" ? "bg-primary/10 text-primary font-semibold" : ""
+                currentPath === "/questionnaire"
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : ""
               }`}
             >
               Questionnaire
             </a>
           </li>
           <li>
-            <a 
-              href="/roadmap" 
+            <a
+              href="/roadmap"
               class={`block px-4 py-2 hover:bg-primary/10 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/roadmap" ? "bg-primary/10 text-primary font-semibold" : ""
+                currentPath === "/roadmap"
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : ""
               }`}
             >
               Roadmap
@@ -78,8 +90,19 @@ const currentPath = Astro.url.pathname;
         </ul>
       </li>
 
+      <li>
+        <a
+          href="/faq"
+          class={`hover:text-[#CFB53B] transition-colors ${
+            currentPath === "/faq" ? "text-[#CFB53B] font-semibold" : ""
+          }`}
+        >
+          FAQ
+        </a>
+      </li>
+
       <!-- Resources Dropdown -->
-      <li class="relative group">
+      <!-- <li class="relative group">
         <button 
           class={`hover:text-[#CFB53B] transition-colors flex items-center gap-1 ${
             currentPath === "/faq" || currentPath === "/why-ontt" ? "text-primary font-semibold" : ""
@@ -110,44 +133,56 @@ const currentPath = Astro.url.pathname;
             </a>
           </li>
         </ul>
-      </li>
+      </li> -->
 
       <!-- Company Dropdown -->
       <li class="relative group">
-        <button 
+        <button
           class={`hover:text-[#CFB53B] transition-colors flex items-center gap-1 ${
-            currentPath === "/about-us" || currentPath === "/creator-recruitment" || currentPath === "/contact-us" ? "text-primary font-semibold" : ""
+            currentPath === "/about-us" ||
+            currentPath === "/creator-recruitment" ||
+            currentPath === "/contact-us"
+              ? "text-primary font-semibold"
+              : ""
           }`}
         >
           Company
           <ChevronDown class="h-4 w-4" />
         </button>
-        <ul class="absolute left-0 top-full mt-2 w-48 bg-background border border-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <ul
+          class="absolute left-0 top-full mt-2 w-48 bg-background border border-border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+        >
           <li>
-            <a 
-              href="/about-us" 
+            <a
+              href="/about-us"
               class={`block px-4 py-2 hover:bg-primary/10 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/about-us" ? "bg-primary/10 text-primary font-semibold" : ""
+                currentPath === "/about-us"
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : ""
               }`}
             >
               About Us
             </a>
           </li>
           <li>
-            <a 
-              href="/creator-recruitment" 
+            <a
+              href="/creator-recruitment"
               class={`block px-4 py-2 hover:bg-primary/10 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/creator-recruitment" ? "bg-primary/10 text-primary font-semibold" : ""
+                currentPath === "/creator-recruitment"
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : ""
               }`}
             >
               Become a Creator
             </a>
           </li>
           <li>
-            <a 
-              href="/contact-us" 
+            <a
+              href="/contact-us"
               class={`block px-4 py-2 hover:bg-primary/10 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/contact-us" ? "bg-primary/10 text-primary font-semibold" : ""
+                currentPath === "/contact-us"
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : ""
               }`}
             >
               Contact Us
@@ -157,7 +192,7 @@ const currentPath = Astro.url.pathname;
       </li>
 
       <li>
-        <a 
+        <a
           href="/contact-us"
           class={`hover:text-[#CFB53B] transition-colors ${
             currentPath === "/contact-us" ? "text-[#CFB53B] font-semibold" : ""
@@ -184,11 +219,14 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile Navigation Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-background/98 backdrop-blur-sm border-t border-border">
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-background/98 backdrop-blur-sm border-t border-border"
+  >
     <ul class="container-custom py-6 space-y-4">
       <li>
-        <a 
-          href="/waitlist" 
+        <a
+          href="/waitlist"
           class={`block py-2 text-lg hover:text-[#CFB53B] transition-colors ${
             currentPath === "/waitlist" ? "text-primary font-semibold" : ""
           }`}
@@ -196,32 +234,39 @@ const currentPath = Astro.url.pathname;
           Join Waitlist
         </a>
       </li>
-      
+
       <!-- Get Started Section -->
       <li>
-        <button 
+        <button
           id="get-started-toggle"
           class={`w-full text-left py-2 text-lg font-semibold flex items-center justify-between ${
-            currentPath === "/questionnaire" || currentPath === "/roadmap" ? "text-primary" : ""
+            currentPath === "/questionnaire" || currentPath === "/roadmap"
+              ? "text-primary"
+              : ""
           }`}
         >
           Get Started
-          <ChevronDown id="get-started-chevron" class="h-5 w-5 transition-transform" />
+          <ChevronDown
+            id="get-started-chevron"
+            class="h-5 w-5 transition-transform"
+          />
         </button>
         <ul id="get-started-menu" class="hidden pl-4 mt-2 space-y-2">
           <li>
-            <a 
-              href="/questionnaire" 
+            <a
+              href="/questionnaire"
               class={`block py-2 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/questionnaire" ? "text-primary font-semibold" : ""
+                currentPath === "/questionnaire"
+                  ? "text-primary font-semibold"
+                  : ""
               }`}
             >
               Questionnaire
             </a>
           </li>
           <li>
-            <a 
-              href="/roadmap" 
+            <a
+              href="/roadmap"
               class={`block py-2 hover:text-[#CFB53B] transition-colors ${
                 currentPath === "/roadmap" ? "text-primary font-semibold" : ""
               }`}
@@ -234,19 +279,24 @@ const currentPath = Astro.url.pathname;
 
       <!-- Resources Section -->
       <li>
-        <button 
+        <button
           id="resources-toggle"
           class={`w-full text-left py-2 text-lg font-semibold flex items-center justify-between ${
-            currentPath === "/faq" || currentPath === "/why-ontt" ? "text-primary" : ""
+            currentPath === "/faq" || currentPath === "/why-ontt"
+              ? "text-primary"
+              : ""
           }`}
         >
           Resources
-          <ChevronDown id="resources-chevron" class="h-5 w-5 transition-transform" />
+          <ChevronDown
+            id="resources-chevron"
+            class="h-5 w-5 transition-transform"
+          />
         </button>
         <ul id="resources-menu" class="hidden pl-4 mt-2 space-y-2">
           <li>
-            <a 
-              href="/faq" 
+            <a
+              href="/faq"
               class={`block py-2 hover:text-[#CFB53B] transition-colors ${
                 currentPath === "/faq" ? "text-primary font-semibold" : ""
               }`}
@@ -255,8 +305,8 @@ const currentPath = Astro.url.pathname;
             </a>
           </li>
           <li>
-            <a 
-              href="/why-ontt" 
+            <a
+              href="/why-ontt"
               class={`block py-2 hover:text-[#CFB53B] transition-colors ${
                 currentPath === "/why-ontt" ? "text-primary font-semibold" : ""
               }`}
@@ -269,19 +319,26 @@ const currentPath = Astro.url.pathname;
 
       <!-- Company Section -->
       <li>
-        <button 
+        <button
           id="company-toggle"
           class={`w-full text-left py-2 text-lg font-semibold flex items-center justify-between ${
-            currentPath === "/about-us" || currentPath === "/creator-recruitment" || currentPath === "/contact-us" ? "text-primary" : ""
+            currentPath === "/about-us" ||
+            currentPath === "/creator-recruitment" ||
+            currentPath === "/contact-us"
+              ? "text-primary"
+              : ""
           }`}
         >
           Company
-          <ChevronDown id="company-chevron" class="h-5 w-5 transition-transform" />
+          <ChevronDown
+            id="company-chevron"
+            class="h-5 w-5 transition-transform"
+          />
         </button>
         <ul id="company-menu" class="hidden pl-4 mt-2 space-y-2">
           <li>
-            <a 
-              href="/about-us" 
+            <a
+              href="/about-us"
               class={`block py-2 hover:text-[#CFB53B] transition-colors ${
                 currentPath === "/about-us" ? "text-primary font-semibold" : ""
               }`}
@@ -290,20 +347,24 @@ const currentPath = Astro.url.pathname;
             </a>
           </li>
           <li>
-            <a 
-              href="/creator-recruitment" 
+            <a
+              href="/creator-recruitment"
               class={`block py-2 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/creator-recruitment" ? "text-primary font-semibold" : ""
+                currentPath === "/creator-recruitment"
+                  ? "text-primary font-semibold"
+                  : ""
               }`}
             >
               Become a Creator
             </a>
           </li>
           <li>
-            <a 
-              href="/contact-us" 
+            <a
+              href="/contact-us"
               class={`block py-2 hover:text-[#CFB53B] transition-colors ${
-                currentPath === "/contact-us" ? "text-primary font-semibold" : ""
+                currentPath === "/contact-us"
+                  ? "text-primary font-semibold"
+                  : ""
               }`}
             >
               Contact Us
@@ -334,7 +395,11 @@ const currentPath = Astro.url.pathname;
     }
 
     // Mobile submenu toggles
-    const setupSubmenu = (toggleId: string, menuId: string, chevronId: string) => {
+    const setupSubmenu = (
+      toggleId: string,
+      menuId: string,
+      chevronId: string
+    ) => {
       const toggle = document.getElementById(toggleId);
       const menu = document.getElementById(menuId);
       const chevron = document.getElementById(chevronId);
@@ -348,13 +413,17 @@ const currentPath = Astro.url.pathname;
       }
     };
 
-    setupSubmenu("get-started-toggle", "get-started-menu", "get-started-chevron");
+    setupSubmenu(
+      "get-started-toggle",
+      "get-started-menu",
+      "get-started-chevron"
+    );
     setupSubmenu("resources-toggle", "resources-menu", "resources-chevron");
     setupSubmenu("company-toggle", "company-menu", "company-chevron");
 
     // Close mobile menu when clicking a link
     const mobileLinks = document.querySelectorAll("#mobile-menu a");
-    mobileLinks.forEach(link => {
+    mobileLinks.forEach((link) => {
       link.addEventListener("click", () => {
         if (mobileMenu) {
           mobileMenu.classList.add("hidden");
